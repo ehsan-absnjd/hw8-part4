@@ -91,7 +91,7 @@ public class Queries {
             e.printStackTrace();
         }
     }
-    public void printTeamsTotalPointsPerSeason(int season){
+    public void printTeamsTotalPointsBySeason(int season){
         final String QUERY = "SELECT t.name , SUM(e.points) AS total_points FROM " +
                 "(SELECT m.id AS match_id, m.guest_points AS points , ts.team_id AS team_id , " +
                 "ts.season AS season FROM matchz m JOIN team_season ts ON m.guest_team_season_id =ts.id  " +
@@ -110,7 +110,7 @@ public class Queries {
             e.printStackTrace();
         }
     }
-    public void printChampTeamPerSeason(int season){
+    public void printChampTeamBySeason(int season){
         final String QUERY = "SELECT e.name AS name , e.total_points AS total_points FROM (select t.name , sum(e.points) AS total_points FROM " +
                 "(SELECT m.id AS match_id, m.guest_points AS points , ts.team_id AS team_id , ts.season  AS season FROM " +
                 "matchz m JOIN team_season ts ON m.guest_team_season_id =ts.id  UNION SELECT m.id AS match_id,m.host_points AS points ," +
@@ -132,7 +132,7 @@ public class Queries {
             e.printStackTrace();
         }
     }
-    public void printMaxGoaledDerbyPerSeason(int season){
+    public void printMaxGoaledDerbyBySeason(int season){
         final String QUERY = "SELECT e.* FROM (SELECT m.id AS matchs_id, thost.name AS host_team , tguest.name AS guest_team , " +
                 "m.guest_goals + m.host_goals AS goals FROM matchz m JOIN team_season tshost ON m.host_team_season_id = tshost.id " +
                 "JOIN team thost ON tshost.team_id =thost.id JOIN team_season tsguest ON m.guest_team_season_id = tsguest.id JOIN " +

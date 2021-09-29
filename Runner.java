@@ -7,8 +7,8 @@ public class Runner {
         q.printCityTeamsCount();
         q.printMaxPayedCoach();
         q.printMaxPayedPlayerPerSeason();
-        q.printTeamsTotalPointsPerSeason(1400);
-        q.printMaxGoaledDerbyPerSeason(1400);
-        q.printChampTeamPerSeason(1400);
+        q.printTeamsTotalPointsBySeason(1400);
+        q.printMaxGoaledDerbyBySeason(1400);
+        q.printChampTeamBySeason(1400);
     }
 }
