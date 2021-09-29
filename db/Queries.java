@@ -54,6 +54,7 @@ public class Queries {
                 long salary = resultSet.getLong(2);
                 System.out.println("all time max payed coach is : "+name + " with salary : " + salary);
             }
+            resultSet.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -70,6 +71,7 @@ public class Queries {
                 int season = resultSet.getInt(3);
                 System.out.println("in season:" + season + " max payed player was : "+ name + " with salary : "+salary );
             }
+            resultSet.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -84,6 +86,7 @@ public class Queries {
                 int count = resultSet.getInt(2);
                 System.out.println("city: " + city + " has " + count + " teams" );
             }
+            resultSet.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -102,6 +105,7 @@ public class Queries {
                 int points = resultSet.getInt(2);
                 System.out.println("team : " + team + " has " + points + " points in season : " + season );
             }
+            resultSet.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -123,6 +127,7 @@ public class Queries {
                 int points = resultSet.getInt(2);
                 System.out.println("the champion is " + name+ " with " + points + " points in season "+ season);
             }
+            resultSet.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -144,8 +149,8 @@ public class Queries {
                 String guestTeam = resultSet.getString(3);
                 int goals = resultSet.getInt(4);
                 System.out.println("derby with max goals is match number " + matchNum + " with team " + hostTeam + " as host and " + guestTeam +" as guest with total goals of " + goals);
-
             }
+            resultSet.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
